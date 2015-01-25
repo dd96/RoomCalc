@@ -274,7 +274,17 @@ namespace RoomCalc
         }
         public Boolean IsNumber(String s)
         {
-            return s.All(Char.IsDigit);
+            foreach (char c in s)
+            {
+                if (c < '0' || c > '9')
+                {
+                    if (c != '.')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
         public Double TriPrismBase(Double a, Double b, Double c)
         {
