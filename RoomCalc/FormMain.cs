@@ -99,7 +99,6 @@ namespace RoomCalc
             //Check if fields are numbers
             else if (IsNumber(TxtInput1.Text) == false || IsNumber(TxtInput2.Text) == false || IsNumber(TxtInput3.Text) == false)
             {
-                MessageBox.Show("Fields cannot contain characters", "Alert");
                 return;
             }
             //read fields
@@ -177,7 +176,6 @@ namespace RoomCalc
 
                     if (IsNumber(TxtHyp.Text) == false || TxtHyp.Text == "")
                     {
-                        MessageBox.Show("Fields cannot contain characters, or be empty","Alert");
                         return;
                     }
                     else
@@ -274,13 +272,27 @@ namespace RoomCalc
         }
         public Boolean IsNumber(String s)
         {
+            bool d = false;
             foreach (char c in s)
             {
                 if (c < '0' || c > '9')
                 {
                     if (c != '.')
                     {
+                        MessageBox.Show("Fields cannot contain characters", "Alert");
                         return false;
+                    }
+                    else
+                    {
+                        if (d == true)
+                        {
+                            MessageBox.Show("Fields cannot contain multiple periods", "Alert");
+                            return false;
+                        }
+                        else
+                        {
+                            d = true;
+                        }
                     }
                 }
             }

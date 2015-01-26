@@ -64,6 +64,7 @@
             // 
             // CmbSectType
             // 
+            this.CmbSectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbSectType.FormattingEnabled = true;
             this.CmbSectType.Items.AddRange(new object[] {
             "Rectangle",
