@@ -272,7 +272,13 @@ namespace RoomCalc
         }
         public Boolean IsNumber(String s)
         {
+
             bool d = false;
+            if (s == ".")
+            {
+                MessageBox.Show("Fields must contain numbers", "Alert");
+                return false;
+            }
             foreach (char c in s)
             {
                 if (c < '0' || c > '9')
@@ -297,6 +303,7 @@ namespace RoomCalc
                 }
             }
             return true;
+
         }
         public Double TriPrismBase(Double a, Double b, Double c)
         {
